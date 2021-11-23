@@ -1,8 +1,12 @@
 # The URL the site will be built for
 base_url = "https://dragove.site"
+title = "鸽子窝"
+description = "随便记录的内容"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
+compile_sass = true
+
+minify_html = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
