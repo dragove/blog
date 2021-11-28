@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
+  <link href="/favicon.png" rel="icon" type="image/png">
   <title>鸽子窝</title>
 </head>
 
@@ -19,11 +20,9 @@
       <a href="/about">关于我</a>
     </nav>
   </header>
-  <section class="section">
-    <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
+  <section class="container">
+    {% block content %}
+    {% endblock %}
   </section>
 </body>
 
