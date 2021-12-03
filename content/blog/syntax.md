@@ -1,6 +1,9 @@
 +++
 title = "Markdown 语法测试"
 date = 2021-11-28
+[taxonomies]
+tags=["markdown"]
+archives=["2021"]
 +++
 
 ## Splliter
