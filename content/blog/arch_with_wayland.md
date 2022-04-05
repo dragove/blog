@@ -167,16 +167,17 @@ EDITOR=nvim visudo # 修改sudoers文件
 # 安装一些常用字体
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-# 安装 sway 终端等软件
-sudo pacman -S sway wezterm waybar wl-clipboard \
-    xorg-xwayland xorg-xlsclients \
-    qt5-wayland glfw-wayland
+# 安装 sway 终端等软件，选择 kitty 是因为 kitty 是 wayland native 的
+# sway-im 是 sway 支持输入法的版本，可以在 archlinuxcn 源或者 AUR 中找到
+sudo pacman -S sway-im kitty waybar wl-clipboard \
+    xorg-xwayland qt5-wayland glfw-wayland
 
 # 安装音频服务
 sudo pacman -S wireplumber pipewire-pulseaudio pipewire-jack pamixer
 ```
 
-`xlsclients` 是一个命令行软件，可以列出当前有哪些软件运行在 Xwayland 上
+使用 `xprop` 软件可以检测窗口是否运行在 Xwayland 上，
+命令行运行xprop之后点击任何窗口，如果可以点击并且 `xprop` 有输出内容，则该窗口运行在X上
 
 ```bash
 # 创建并编辑 sway 配置文件
@@ -257,4 +258,5 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username - $TERM
 - [鸽子的配置](https://github.com/dragove/dotfiles)
 - [Arch Linux Studio 安装手册](https://archlinuxstudio.github.io/ArchLinuxTutorial)
 - [fosskers 的wayland教程](https://www.fosskers.ca/en/blog/wayland)
+- 感谢 Arch Linux CN 群里的小伙伴的帮助
 
