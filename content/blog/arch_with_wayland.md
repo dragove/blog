@@ -1,6 +1,7 @@
 +++
 title = "Arch Linux安装记录(UEFI + sway(wayland) + iwd + pipewire)"
 date = 2022-04-04
+updated = 2022-04-05
 [taxonomies]
 tags=["linux"]
 archives=["2022"]
@@ -250,7 +251,7 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username - $TERM
 
 ### 博主的配置以及参考内容
 
-[鸽子的配置](https://github.com/dragove/dotfiles)
-[Arch Linux Studio 安装手册](https://archlinuxstudio.github.io/ArchLinuxTutorial)
-[fosskers 的wayland教程](https://www.fosskers.ca/en/blog/wayland)
+- [鸽子的配置](https://github.com/dragove/dotfiles)
+- [Arch Linux Studio 安装手册](https://archlinuxstudio.github.io/ArchLinuxTutorial)
+- [fosskers 的wayland教程](https://www.fosskers.ca/en/blog/wayland)
 
