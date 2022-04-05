@@ -171,6 +171,9 @@ sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 sudo pacman -S sway wezterm waybar wl-clipboard \
     xorg-xwayland xorg-xlsclients \
     qt5-wayland glfw-wayland
+
+# 安装音频服务
+sudo pacman -S wireplumber pipewire-pulseaudio pipewire-jack pamixer
 ```
 
 `xlsclients` 是一个命令行软件，可以列出当前有哪些软件运行在 Xwayland 上
