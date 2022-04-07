@@ -188,11 +188,11 @@ cp /etc/sway/config .
 nvim config
 # 修改一下term变量到自己的终端
 
-# 启动 wayland
-exec wayland
-# 如果安装了 nvidia 驱动，会导致 wayland 报错，
+# 启动 sway
+exec sway
+# 如果安装了 nvidia 驱动，会导致 sway 报错，
 # 如果是双显卡用户，可以使用以下命令
-exec wayland --unsupported-gpu
+exec sway --unsupported-gpu
 ```
 
 到这里，就已经成功进入到 sway 的界面里了，可以通过修改 .zprofile 来修改 zsh 启动配置
