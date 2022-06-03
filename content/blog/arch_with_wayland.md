@@ -100,7 +100,7 @@ hwclock --systohc # 将系统时间写入硬件
 # 编辑 locale 文件，将 en_US.UTF-8 和 zh_CN.UTF-8 前的注释符号'#'删掉
 nvim /etc/locale.gen
 # 生成 locale
-local-gen
+locale-gen
 # 配置系统 LANG 变量，大部分软件依赖该变量识别语言
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf # 可以按照需求配置成中文，但是不建议使用中文
 
@@ -111,7 +111,8 @@ nvim /etc/hosts
 ### hosts 内容参考
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   myarch
+# use your own hostname
+127.0.1.1   arch
 ### hosts 内容参考
 
 # 安装微码，请根据自己的cpu选择
@@ -173,7 +174,7 @@ sudo pacman -S sway-im kitty waybar wl-clipboard \
     xorg-xwayland qt5-wayland glfw-wayland
 
 # 安装音频服务
-sudo pacman -S wireplumber pipewire-pulseaudio pipewire-jack pamixer
+sudo pacman -S wireplumber pipewire-pulse pipewire-jack pamixer
 ```
 
 使用 `xprop` 软件可以检测窗口是否运行在 Xwayland 上，
