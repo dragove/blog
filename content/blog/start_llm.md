@@ -42,7 +42,7 @@ archives=["2023"]
 			  ```
 			- Mac OS
 			  
-			  ```shell
+			  ```bash
 			  # MacOS 用户，使用 bash 或者 zsh
 			  # 安装 homebrew
 			  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -52,13 +52,13 @@ archives=["2023"]
 			- Linux
 			  如果你的包管理器能帮你解决，就用包管理器，如果不能，则使用官方安装方式
 			  
-			  ```shell
+			  ```bash
 			  curl -sSf https://rye-up.com/get | bash
 			  ```
 	- GPU 推理用户额外操作 （Mac 用户请直接跳过，因为 Mac 没有 nvidia 显卡用）
 		- 安装 cuda
 		  
-		  ```shell
+		  ```bash
 		  # Windows 用户可以用 scoop 安装
 		  scoop install cuda
 		  
@@ -69,7 +69,7 @@ archives=["2023"]
 	- 创建一个项目
 		- 找到一个放置项目的风水宝地，cd 进去，然后使用 rye 创建项目
 		  
-		  ```shell
+		  ```bash
 		  # 个人爱好的目录组织方式，请替换为你自己习惯的目录
 		  cd ~/Workspace/Python
 		  # 使用 rye 创建项目，项目名称为 chatllm
@@ -80,13 +80,13 @@ archives=["2023"]
 		  ```
 		- 给项目绑定一个python版本并运行
 		  
-		  ```shell
+		  ```bash
 		  # 指定使用 python 3.11，最新的 python 3.12 于 10月2日发布，暂不建议使用
 		  rye pin cpython@3.11
 		  # 执行同步，该操作会帮你下载这个项目的所有依赖和python解释器
 		  rye sync
-		  # 执行进入带有当前项目环境的shell
-		  rye shell
+		  # 执行进入带有当前项目环境的bash
+		  rye bash
 		  # 执行 python
 		  python
 		  # 退出python
@@ -97,7 +97,7 @@ archives=["2023"]
 	  通义千问 是阿里云开源的一个大语言模型，对中文的支持较好，是目前最好的开源中文模型，由于目前开源的最好的版本Qwen-14B对设备要求较高，本教程将使用Qwen-7B作为演示（GPU则使用 Qwen-7B-int4 量化模型以降低对显存的要求）
 	- 添加依赖
 	  
-	  ```shell
+	  ```bash
 	  rye add transformers torch tiktoken einops  transformers_stream_generator accelerate optimum auto-gptq
 	  # 添加依赖后要执行 sync 才会下载依赖到当前环境
 	  rye sync
@@ -140,7 +140,7 @@ archives=["2023"]
 	  ```
 	- 尝试运行
 	  
-	  ```shell
+	  ```bash
 	  # 使用命令行运行或者直接使用IDE来运行（vscode可以直接按F5运行，pycharm右键文件可以运行）
 	  python common.py
 	  
@@ -640,7 +640,7 @@ archives=["2023"]
 		- 由于大部分大语言模型的生态都和openai的gpt接壤，通义千问提供了一个转换的接口，使得用户可以通过openai的调用方式调用到通义千问
 		- 添加依赖
 		  
-		  ```shell
+		  ```bash
 		  rye add fastapi uvicorn openai pydantic sse-starlette
 		  rye sync
 		  ```
@@ -1185,7 +1185,7 @@ archives=["2023"]
 		- [langchain](https://python.langchain.com/docs/get_started/introduction) 是一个语言模型开发框架，可以简化大语言模型开发
 		  添加 langchain 依赖
 		  
-		  ```shell
+		  ```bash
 		  rye add langchain
 		  rye sync
 		  ```
@@ -1205,13 +1205,13 @@ archives=["2023"]
 		  
 		  要运行该代码，请确保“添加 openai 接口支持”步骤已经完成并且启动了服务端，该代码的运行结果可能如下
 		  
-		  ```shell
+		  ```bash
 		  content='Java开发者最喜欢的事情是什么？\n他们喜欢在代码中写入“//”注释，然后忘记它们！'
 		  ```
 - 使用 langchain 实现本地文档问答
 	- 添加 huggingface embeddings 支持，这样 langchain 就可以使用来自于 huggingface 的句子转向量模型了
 	  
-	  ```shell
+	  ```bash
 	  rye add sentence_transformers
 	  rye sync
 	  ```
@@ -1236,7 +1236,7 @@ archives=["2023"]
 	  这个代码的输出是一个维度为768的向量
 	- 添加 pdf 读取支持，langchain 可以使用 `pypdf` 库支持 pdf 读取
 	  
-	  ```shell
+	  ```bash
 	  rye add pypdf
 	  rye sync
 	  ```
@@ -1252,7 +1252,7 @@ archives=["2023"]
 	  ```
 	- 将数据向量化并存储，这里使用 [Chroma](https://docs.trychroma.com/) 作为简易向量数据库（chroma 是使用 sqlite 作为底层的一个简易向量数据库，如果你有更多的数据和更高的要求，请搜索专业向量数据库），需要先安装 chromadb 依赖，之后调用 langchain 的封装直接使用，为了之后调试方便，我们可以建立一个目录持久化向量数据
 	  
-	  ```shell
+	  ```bash
 	  rye add chromadb
 	  rye sync
 	  mkdir dbcache
@@ -1318,7 +1318,7 @@ archives=["2023"]
 	  
 	  样例运行结果如下：
 	  
-	  ```shell
+	  ```bash
 	  Q: 总结hdfs存储文件的过程
 	  A: HDFS使用DistCp工具进行大集群内的文件复制。DistCp是一个MapReduce任务，每个map任务将源数据的一部分复制到目标文件系统。MapReduce框架自动处理并行任务调度、错误检测和恢复。
 	  ```
