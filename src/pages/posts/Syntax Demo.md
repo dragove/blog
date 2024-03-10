@@ -1,10 +1,10 @@
-+++
-title = "Markdown 语法测试"
-date = 2021-11-28
-[taxonomies]
-tags=["markdown"]
-archives=["2021"]
-+++
+---
+title: Markdown 语法测试
+date: 2021-11-28
+layout: '../../layouts/Layout.astro'
+---
+
+# 样例
 
 ## Splliter
 
@@ -102,4 +102,3 @@ int main() {
   printf("%d\n", foo(l));
 }
 ```
-

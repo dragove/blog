@@ -1,11 +1,8 @@
-+++
-title = "一篇文章入门大语言模型开发（通义千问 + LangChain 本地pdf问答 ）"
-date = 2023-10-06
-[taxonomies]
-tags=["llm"]
-archives=["2023"]
-+++
-
+---
+title: 一篇文章入门大语言模型开发（通义千问 + LangChain 本地pdf问答）
+date: 2023-10-06
+layout: '../../layouts/Layout.astro'
+---
 
 - > 大语言模型已经火了很久了，希望这篇文章能帮到还没尝试过的新手
 - 本教程特色

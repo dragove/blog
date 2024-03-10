@@ -1,11 +1,9 @@
-+++
-title = "Arch Linux安装记录(UEFI + sway(wayland) + iwd + pipewire)"
-date = 2022-04-04
-updated = 2022-04-05
-[taxonomies]
-tags=["linux"]
-archives=["2022"]
-+++
+---
+title: Arch Linux安装记录(UEFI + sway(wayland) + iwd + pipewire)
+date: 2022-04-04
+updated: 2022-04-05
+layout: '../../layouts/Layout.astro'
+---
 
 ## 安装前准备
 
@@ -260,4 +258,5 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username - $TERM
 - [Arch Linux Studio 安装手册](https://archlinuxstudio.github.io/ArchLinuxTutorial)
 - [fosskers 的wayland教程](https://www.fosskers.ca/en/blog/wayland)
 - 感谢 Arch Linux CN 群里的小伙伴的帮助
+
 

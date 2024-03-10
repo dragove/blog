@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
+allPosts.sort((p1, p2) => new Date(p2.frontmatter.date).getTime() - new Date(p1.frontmatter.date).getTime());
+---
+
+<Layout>
+    <section>
+        {
+            allPosts.map((post) => (
+                <li>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                    <span>{post.frontmatter.date.toString().slice(0,10)}</span>
+                </li>
+            ))
+        }
+    </section>
+</Layout>
