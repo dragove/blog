@@ -1,7 +1,7 @@
 ---
 title: Markdown 语法测试
 date: 2021-11-28
-layout: '../../layouts/Layout.astro'
+layout: '../../layouts/MarkdownLayout.astro'
 ---
 
 # 样例
