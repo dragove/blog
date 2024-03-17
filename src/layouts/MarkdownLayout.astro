@@ -6,6 +6,7 @@ import Layout from "./Layout.astro";
     <slot />
     <script>
         let copyButtonLabel = "复制";
+import { reference } from "astro:content";
         let codeBlocks = Array.from(document.querySelectorAll(".astro-code"));
 
         for (let codeBlock of codeBlocks) {
@@ -15,6 +16,7 @@ import Layout from "./Layout.astro";
             let copyButton = document.createElement("button");
             copyButton.className = "copy-code";
             copyButton.innerHTML = copyButtonLabel;
+            copyButton.setAttribute("style", "position: absolute; right: .75rem; top: -.75rem; background-color: #5555aa; border: none; border-radius: .25rem; color: #ccccaa")
 
             codeBlock.setAttribute("tabindex", "0");
             codeBlock.appendChild(copyButton);
@@ -27,15 +29,17 @@ import Layout from "./Layout.astro";
             });
         }
 
-        async function copyCode(block, button) {
+        async function copyCode(block: Element, button: HTMLButtonElement) {
             let code = block.querySelector("code");
-            let text = code.innerText;
-
-            await navigator.clipboard.writeText(text);
-
-            // visual feedback that task is completed
+            let text = code?.innerText;
+            if (text) {
+                await navigator.clipboard.writeText(text ?? "");
+                button.innerText = "Code Failed";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 700);
+            }
             button.innerText = "Code Copied";
-
             setTimeout(() => {
                 button.innerText = copyButtonLabel;
             }, 700);
