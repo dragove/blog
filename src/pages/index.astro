@@ -8,7 +8,7 @@ allPosts.sort((p1, p2) => new Date(p2.frontmatter.date).getTime() - new Date(p1.
     <section>
         {
             allPosts.map((post) => (
-                <li>
+                <li class="articleLink">
                     <a href={post.url}>{post.frontmatter.title}</a>
                     <span>{post.frontmatter.date.toString().slice(0,10)}</span>
                 </li>

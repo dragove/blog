@@ -1,9 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import lepnBanner from "../imgs/lepn-banner.png";
+
+interface LinkData {
+    name: string;
+    comment: string;
+    link: string;
+    avatar: string;
+    banner: ImageMetadata;
+}
+
+const linksData = [
+    {
+        name: "iepn",
+        comment: "正在攻略炼狱难度副本挑战",
+        link: "https://otvto.work",
+        avatar: "https://avatars.githubusercontent.com/u/57232813?v=4",
+        banner: lepnBanner,
+    },
+];
 ---
 
 <Layout title="友情链接">
     <section>
-        暂时没有捏~
+        {
+            linksData.map((data) => (
+                <div
+                    class="fr-link"
+                    style={"background-image: url(" + data.banner.src + ")"}
+                >
+                    <a href={data.link}>
+                        <div style="height:100%">
+                            <img
+                                src={data.avatar}
+                                class="avatar"
+                                alt={data.name + "'s avatar"}
+                            />
+                            <span class="name">{data.name}</span>
+                            <p>{data.comment}</p>
+                        </div>
+                    </a>
+                </div>
+            ))
+        }
     </section>
+    <style>
+        .avatar {
+            margin: 1rem 0 0 1rem;
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+        }
+        .name {
+            margin-top: -10px;
+        }
+        .fr-link a {
+            color: #4476b9;
+            margin: 0;
+        }
+        .fr-link a:hover {
+            text-shadow: none;
+        }
+        .fr-link p {
+            text-align: center;
+            color: #cc4554;
+        }
+        .fr-link {
+            margin: auto;
+            background-color: #282c34;
+            background-size: cover;
+            border-radius: 0.25rem;
+            width: 42rem;
+            height: 10rem;
+            border: 1px;
+        }
+    </style>
 </Layout>
