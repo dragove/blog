@@ -3,7 +3,7 @@ const { title } = Astro.props;
 ---
 
 <header>
-		<h1>鸽子窝{title ? "-" + title : ""}</h1>
+    <h1>{title ? title + "|" : ""}鸽子窝</h1>
     <nav>
         <a href="/">博文</a>
         <a href="/links">友情链接</a>

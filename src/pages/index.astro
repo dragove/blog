@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-allPosts.sort((p1, p2) => new Date(p2.frontmatter.date).getTime() - new Date(p1.frontmatter.date).getTime());
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+);
+allPosts.sort(
+  (p1, p2) =>
+    new Date(p2.frontmatter.date).getTime() -
+    new Date(p1.frontmatter.date).getTime(),
+);
 ---
 
-<Layout>
+<Layout title="">
     <section>
         {
             allPosts.map((post) => (
