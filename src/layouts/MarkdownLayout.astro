@@ -6,7 +6,6 @@ import Layout from "./Layout.astro";
     <slot />
     <script>
         let copyButtonLabel = "复制";
-import { reference } from "astro:content";
         let codeBlocks = Array.from(document.querySelectorAll(".astro-code"));
 
         for (let codeBlock of codeBlocks) {
