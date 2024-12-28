@@ -17,9 +17,7 @@ import Layout from "./Layout.astro";
             copyButton.innerHTML = copyButtonLabel;
             copyButton.setAttribute("style", "position: absolute; right: .75rem; top: -.75rem; background-color: #5555aa; border: none; border-radius: .25rem; color: #ccccaa")
 
-            codeBlock.setAttribute("tabindex", "0");
             codeBlock.appendChild(copyButton);
-            // wrap codebock with relative parent element
             codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
             wrapper.appendChild(codeBlock);
 
@@ -33,15 +31,15 @@ import Layout from "./Layout.astro";
             let text = code?.innerText;
             if (text) {
                 await navigator.clipboard.writeText(text ?? "");
-                button.innerText = "Code Failed";
+                button.innerText = "复制失败";
                 setTimeout(() => {
                     button.innerText = copyButtonLabel;
-                }, 700);
+                }, 1000);
             }
-            button.innerText = "Code Copied";
+            button.innerText = "复制成功";
             setTimeout(() => {
                 button.innerText = copyButtonLabel;
-            }, 700);
+            }, 1000);
         }
     </script>
 </Layout>

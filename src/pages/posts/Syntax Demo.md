@@ -1,7 +1,7 @@
 ---
-title: Markdown 语法测试
-date: 2021-11-28
-layout: '../../layouts/MarkdownLayout.astro'
+layout: "../../layouts/MarkdownLayout.astro"
+title: "Markdown 语法测试"
+date: "2021-11-28"
 ---
 
 # 样例

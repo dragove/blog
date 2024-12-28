@@ -1,8 +1,7 @@
 ---
-title: Arch Linux安装记录(UEFI + sway(wayland) + iwd + pipewire)
-date: 2022-04-04
-updated: 2022-04-05
-layout: '../../layouts/MarkdownLayout.astro'
+layout: "../../layouts/MarkdownLayout.astro"
+title: "Arch Linux安装记录(UEFI + sway(wayland) + iwd + pipewire)"
+date: "2022-04-04"
 ---
 
 ## 安装前准备
