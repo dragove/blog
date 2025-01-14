@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import lepnBanner from "../imgs/lepn-banner.png";
+import IusxBanner from "../imgs/iusx-banner.png";
 
 interface LinkData {
   name: string;
@@ -12,11 +12,11 @@ interface LinkData {
 
 const linksData = [
   {
-    name: "iepn",
-    comment: "正在攻略炼狱难度副本挑战",
-    link: "https://otvto.work",
+    name: "iusx",
+    comment: "潜在的达尔文奖获得者之一",
+    link: "https://m.ritsu.jiangxue.org/",
     avatar: "https://avatars.githubusercontent.com/u/57232813?v=4",
-    banner: lepnBanner,
+    banner: IusxBanner,
   },
 ];
 ---
@@ -27,7 +27,7 @@ const linksData = [
             linksData.map((data) => (
                 <div
                     class="fr-link"
-                    style={"background-image: url(" + data.banner.src + ")"}
+                    style={data.banner && data.banner.src ? "background-image: url(" + data.banner.src + ");" : ""}
                 >
                     <a href={data.link}>
                         <div style="height:100%">
@@ -40,7 +40,7 @@ const linksData = [
                                 <span class="name">{data.name}</span>
                             </div>
                             <div class="comment-layout">
-                                <p>{data.comment}</p>
+                                <p>"{data.comment}"</p>
                             </div>
                         </div>
                     </a>
@@ -54,7 +54,7 @@ const linksData = [
             display: flex;
             align-items: center;
             flex-direction: row-reverse;
-            background: #24282ff2;
+            background: #00000024;
             justify-content: center;
         }
         .avater-layout {
@@ -74,7 +74,6 @@ const linksData = [
             font-weight: bold;
         }
         .fr-link a {
-            color: #4476b9;
             margin: 0;
         }
         .fr-link a:hover {
@@ -82,7 +81,7 @@ const linksData = [
         }
         .fr-link p {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 0;
             color: #ff9999;
         }
@@ -91,10 +90,12 @@ const linksData = [
             background-color: #282c34;
             background-size: cover;
             border-radius: 0.25rem;
-            width: 42rem;
+            max-width: 42rem;
             height: 10rem;
             margin-bottom: 4rem;
             border: 1px;
+            box-shadow: 0px 4px 64.5px 11px rgb(0 0 0 / 12%);
+            border 1px solid rgb(255 255 255 / 5%);
         }
     </style>
 </Layout>
