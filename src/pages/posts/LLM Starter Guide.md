@@ -146,7 +146,7 @@ date: "2023-10-06"
 	  A: 你好！有什么我能帮助你的吗？
 	  ```
 - 学会构建 prompt
-	- 这部分内容基于吴恩达的 Prompt Engineering 课程编写，由于是快速入门，这里只写几个要点，完整课程可以在 [deeplearning.ai](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) 上获取到，该网站还有很多其他的免费课程，其课件的中文翻译可以从 [面向开发者的 LLM 入门课程](https://datawhalechina.github.io/prompt-engineering-for-developers/#/?id=%e9%9d%a2%e5%90%91%e5%bc%80%e5%8f%91%e8%80%85%e7%9a%84-llm-%e5%85%a5%e9%97%a8%e8%af%be%e7%a8%8b) 中获取
+	- 这部分内容基于吴恩达的 Prompt Engineering 课程编写，由于是快速入门，这里只写几个要点，完整课程可以在 [deeplearning.ai](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) 上获取到，该网站还有很多其他的免费课程，其课件的中文翻译可以从 [面向开发者的 LLM 入门课程](https://datawhalechina.github.io/llm-cookbook) 中获取
 	- prompt 编写原则总结
 		- 指令单一且清晰
 		- 用分隔符（如 ```，"""，< >，<tag> </tag>）拆分输入的不同部分
